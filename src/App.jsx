@@ -112,8 +112,8 @@ function normalizeTelemetry(row) {
   const rawSite = row?.site_id || "NTPC Singrauli Thermal Station";
   const mappedSite =
     rawSite === "SITE_A" || rawSite === "SUBSTATION_ALPHA" ? "NTPC Singrauli Thermal Station" :
-    rawSite === "SITE_B" ? "Coal India Jharia Mine" :
-    rawSite === "SITE_C" ? "Tata Steel Jamshedpur Works" : rawSite;
+      rawSite === "SITE_B" ? "Coal India Jharia Mine" :
+        rawSite === "SITE_C" ? "Tata Steel Jamshedpur Works" : rawSite;
 
   const base = {
     worker_id: row?.worker_id || "WORKER_000",
@@ -216,8 +216,8 @@ function EcgWave({ worker }) {
     const baseline = height / 2 + Math.sin(index / 3) * (3 + stress * 4);
     const spike =
       phase === 8 ? -46 - stress * 22 :
-      phase === 9 ? 34 + stress * 15 :
-      phase === 10 ? -12 : 0;
+        phase === 9 ? 34 + stress * 15 :
+          phase === 10 ? -12 : 0;
     return `${(index / 123) * width},${baseline + spike}`;
   }).join(" ");
 
@@ -563,15 +563,15 @@ function BeaconTimeline({ beacons, topIncident, onSelect }) {
     ? beacons
     : topIncident
       ? [{
-          id: "preview",
-          worker_id: topIncident.worker_id,
-          site_id: topIncident.site_id,
-          zone: topIncident.zone,
-          protocol: topIncident.beacon_protocol,
-          local_alarm: topIncident.status === "CRITICAL",
-          gateway: `${topIncident.site_id}_INTRANET_GATEWAY`,
-          timestamp: topIncident.timestamp,
-        }]
+        id: "preview",
+        worker_id: topIncident.worker_id,
+        site_id: topIncident.site_id,
+        zone: topIncident.zone,
+        protocol: topIncident.beacon_protocol,
+        local_alarm: topIncident.status === "CRITICAL",
+        gateway: `${topIncident.site_id}_INTRANET_GATEWAY`,
+        timestamp: topIncident.timestamp,
+      }]
       : [];
 
   return (
@@ -743,7 +743,7 @@ function VitalsGridDashboard() {
   const handleSignOut = useCallback(() => {
     try {
       localStorage.removeItem("vitalsgrid_session");
-    } catch (e) {}
+    } catch (e) { }
     setUserSession(null);
   }, []);
 
@@ -767,7 +767,7 @@ function VitalsGridDashboard() {
     if (!voiceEnabled || !window.speechSynthesis) return;
     const now = Date.now();
     const lastSpoken = spokenAlertsRef.current.get(workerId) || 0;
-    
+
     if (now - lastSpoken < 25000) return;
     spokenAlertsRef.current.set(workerId, now);
 
@@ -781,7 +781,7 @@ function VitalsGridDashboard() {
       utterance.rate = 0.95;
       utterance.pitch = 1.0;
       window.speechSynthesis.speak(utterance);
-    } catch (e) {}
+    } catch (e) { }
   }, [voiceEnabled, voiceLang]);
 
   const applyPayload = useCallback((payload) => {
@@ -832,7 +832,7 @@ function VitalsGridDashboard() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ worker_id: workerId, params }),
-    }).catch(() => {});
+    }).catch(() => { });
   }, [addBeacon, applyPayload, workers]);
 
   const loadRows = useCallback((rows) => {
@@ -865,10 +865,15 @@ function VitalsGridDashboard() {
   useEffect(() => {
     fetch(getHttpUrl("/api/dataset"))
       .then((response) => (response.ok ? response.json() : []))
-      .then((rows) => loadRows(rows))
+      .then((rows) => {
+        if (Array.isArray(rows) && rows.length > 0) {
+          loadRows(rows);
+        } else {
+          loadRows(DEFAULT_TELEMETRY_ROWS);
+        }
+      })
       .catch(() => {
-        setDatasetLoaded(false);
-        setConnectionStatus("offline");
+        loadRows(DEFAULT_TELEMETRY_ROWS);
       });
   }, [loadRows]);
 
@@ -1089,80 +1094,80 @@ function VitalsGridDashboard() {
 
           <ArchitecturePanel />
 
-      <main className="dashboard-layout">
-        <section className="operations-area">
-          <div className="topology-panel">
-            <div className="panel-header">
-              <div>
-                <span className="panel-title">Operations overview</span>
-                <h2>Facility telemetry and risk map</h2>
-              </div>
-              <div className="mode-toggle">
-                <button type="button" className={dataMode === "dataset" ? "active" : ""} onClick={() => setDataMode("dataset")} disabled={!datasetLoaded}>Dataset</button>
-                <button type="button" className={dataMode === "live" ? "active" : ""} onClick={() => setDataMode("live")}>Live</button>
-              </div>
-            </div>
-
-            <div className="visual-grid">
-              <WorkerMap workers={workerList} selectedWorkerId={selectedWorker.worker_id} onSelect={setSelectedWorkerId} />
-              <div className="analytics-stack">
-                <div className="analytics-panel">
-                  <div className="panel-subhead"><span>Computed risk trend</span><strong>{trendValues.length ? formatPercent(trendValues[trendValues.length - 1]) : "0.0%"}</strong></div>
-                  <SparklineChart values={trendValues} color="#58c8f6" fill />
-                </div>
-                <div className="small-chart-grid">
-                  <div className="analytics-panel">
-                    <div className="panel-subhead"><span>Sites</span><strong>{siteLabels.length}</strong></div>
-                    <MiniBarChart values={siteValues} labels={siteLabels} color="#42d69b" />
+          <main className="dashboard-layout">
+            <section className="operations-area">
+              <div className="topology-panel">
+                <div className="panel-header">
+                  <div>
+                    <span className="panel-title">Operations overview</span>
+                    <h2>Facility telemetry and risk map</h2>
                   </div>
-                  <div className="analytics-panel">
-                    <div className="panel-subhead"><span>Gas ppm spread</span><strong>{Math.max(...exposureBins.map((bin) => bin.value), 0)}</strong></div>
-                    <MiniBarChart values={exposureBins.map((bin) => bin.value)} labels={exposureBins.map((bin) => bin.label)} color="#f3b33d" />
+                  <div className="mode-toggle">
+                    <button type="button" className={dataMode === "dataset" ? "active" : ""} onClick={() => setDataMode("dataset")} disabled={!datasetLoaded}>Dataset</button>
+                    <button type="button" className={dataMode === "live" ? "active" : ""} onClick={() => setDataMode("live")}>Live</button>
                   </div>
                 </div>
+
+                <div className="visual-grid">
+                  <WorkerMap workers={workerList} selectedWorkerId={selectedWorker.worker_id} onSelect={setSelectedWorkerId} />
+                  <div className="analytics-stack">
+                    <div className="analytics-panel">
+                      <div className="panel-subhead"><span>Computed risk trend</span><strong>{trendValues.length ? formatPercent(trendValues[trendValues.length - 1]) : "0.0%"}</strong></div>
+                      <SparklineChart values={trendValues} color="#58c8f6" fill />
+                    </div>
+                    <div className="small-chart-grid">
+                      <div className="analytics-panel">
+                        <div className="panel-subhead"><span>Sites</span><strong>{siteLabels.length}</strong></div>
+                        <MiniBarChart values={siteValues} labels={siteLabels} color="#42d69b" />
+                      </div>
+                      <div className="analytics-panel">
+                        <div className="panel-subhead"><span>Gas ppm spread</span><strong>{Math.max(...exposureBins.map((bin) => bin.value), 0)}</strong></div>
+                        <MiniBarChart values={exposureBins.map((bin) => bin.value)} labels={exposureBins.map((bin) => bin.label)} color="#f3b33d" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="dataset-strip">
+                  <div>
+                    <span className="dataset-label">Dataset status</span>
+                    <strong>{datasetLoaded ? `${datasetRows.length} raw telemetry rows, risk computed locally` : "No dataset available"}</strong>
+                  </div>
+                  <label className="csv-upload"><input type="file" accept=".csv,text/csv" onChange={handleCsvUpload} /><span>Upload CSV</span></label>
+                </div>
+                {csvError ? <div className="csv-error">{csvError}</div> : null}
               </div>
-            </div>
 
-            <div className="dataset-strip">
-              <div>
-                <span className="dataset-label">Dataset status</span>
-                <strong>{datasetLoaded ? `${datasetRows.length} raw telemetry rows, risk computed locally` : "No dataset available"}</strong>
+              <WorkerDetail
+                worker={selectedWorker}
+                timeline={workerTimeline}
+                onRunScenario={runEmergencyScenario}
+                onViewReport={(w) => setReportWorker(w)}
+              />
+            </section>
+
+            <aside className="side-area">
+              <WorkerRoster workers={workerList} selectedWorkerId={selectedWorker.worker_id} onSelect={setSelectedWorkerId} />
+              <BeaconTimeline beacons={beacons} topIncident={topIncident} onSelect={setSelectedWorkerId} />
+
+              <div className="system-card accent-card">
+                <span className="panel-title">Response status</span>
+                <div className="response-meter"><div className="response-fill" style={{ width: `${riskPercent}%` }} /></div>
+                <p>{summary.critical > 0 ? `Priority escalation active for ${summary.critical} worker(s).` : "All monitored workers are inside the normal safety band."}</p>
               </div>
-              <label className="csv-upload"><input type="file" accept=".csv,text/csv" onChange={handleCsvUpload} /><span>Upload CSV</span></label>
-            </div>
-            {csvError ? <div className="csv-error">{csvError}</div> : null}
-          </div>
 
-          <WorkerDetail
-            worker={selectedWorker}
-            timeline={workerTimeline}
-            onRunScenario={runEmergencyScenario}
-            onViewReport={(w) => setReportWorker(w)}
-          />
-        </section>
-
-        <aside className="side-area">
-          <WorkerRoster workers={workerList} selectedWorkerId={selectedWorker.worker_id} onSelect={setSelectedWorkerId} />
-          <BeaconTimeline beacons={beacons} topIncident={topIncident} onSelect={setSelectedWorkerId} />
-
-          <div className="system-card accent-card">
-            <span className="panel-title">Response status</span>
-            <div className="response-meter"><div className="response-fill" style={{ width: `${riskPercent}%` }} /></div>
-            <p>{summary.critical > 0 ? `Priority escalation active for ${summary.critical} worker(s).` : "All monitored workers are inside the normal safety band."}</p>
-          </div>
-
-          <div className="system-card">
-            <span className="panel-title">Policy and system</span>
-            <div className="system-list">
-              <div className="system-item"><span>Warning policy</span><strong>{formatPercent(RISK_POLICY.warningThreshold)}</strong></div>
-              <div className="system-item"><span>Critical policy</span><strong>{formatPercent(RISK_POLICY.criticalThreshold)}</strong></div>
-              <div className="system-item"><span>Sites online</span><strong>{summary.siteCount || 0}</strong></div>
-              <div className="system-item"><span>Selected state</span><strong style={{ color: selectedMeta.color }}>{selectedWorker.status}</strong></div>
-            </div>
-          </div>
-        </aside>
-      </main>
-      </>
+              <div className="system-card">
+                <span className="panel-title">Policy and system</span>
+                <div className="system-list">
+                  <div className="system-item"><span>Warning policy</span><strong>{formatPercent(RISK_POLICY.warningThreshold)}</strong></div>
+                  <div className="system-item"><span>Critical policy</span><strong>{formatPercent(RISK_POLICY.criticalThreshold)}</strong></div>
+                  <div className="system-item"><span>Sites online</span><strong>{summary.siteCount || 0}</strong></div>
+                  <div className="system-item"><span>Selected state</span><strong style={{ color: selectedMeta.color }}>{selectedWorker.status}</strong></div>
+                </div>
+              </div>
+            </aside>
+          </main>
+        </>
       )}
 
       {alertingWorkers.size > 0 ? (
