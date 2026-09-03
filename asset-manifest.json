@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/VITALSGRID/static/css/main.426690d8.css",
-    "main.js": "/VITALSGRID/static/js/main.6be51778.js",
-    "index.html": "/VITALSGRID/index.html",
-    "main.426690d8.css.map": "/VITALSGRID/static/css/main.426690d8.css.map",
-    "main.6be51778.js.map": "/VITALSGRID/static/js/main.6be51778.js.map"
+    "main.css": "./static/css/main.426690d8.css",
+    "main.js": "./static/js/main.6be51778.js",
+    "index.html": "./index.html",
+    "main.426690d8.css.map": "./static/css/main.426690d8.css.map",
+    "main.6be51778.js.map": "./static/js/main.6be51778.js.map"
   },
   "entrypoints": [
     "static/css/main.426690d8.css",
