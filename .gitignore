@@ -1,0 +1,11 @@
+node_modules/
+build/
+dist/
+.env.local
+npm-debug.log*
+yarn-debug.log*
+*.log
+__pycache__/
+*.py[cod]
+.vscode/
+.idea/

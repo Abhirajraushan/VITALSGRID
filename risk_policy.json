@@ -1,0 +1,7 @@
+{
+  "warningThreshold": 0.5,
+  "criticalThreshold": 0.75,
+  "heatIndexCriticalC": 39,
+  "gasCriticalPpm": 55,
+  "spo2CriticalPct": 92
+}

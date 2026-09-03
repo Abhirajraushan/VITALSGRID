@@ -1,0 +1,387 @@
+{
+  "alerts": [
+    {
+      "id": "ALERT_WORKER_002",
+      "worker_id": "WORKER_002",
+      "site_id": "SITE_A",
+      "severity": "critical",
+      "anomaly_score": 0.415,
+      "alert_flag": 2048,
+      "message": "On-device TinyML model triggered local alarm and offline distress beacon.",
+      "created_at": "2026-09-03T10:35:31.361Z"
+    },
+    {
+      "id": "ALERT_WORKER_016",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "severity": "critical",
+      "anomaly_score": 0.415,
+      "alert_flag": 2048,
+      "message": "On-device TinyML model triggered local alarm and offline distress beacon.",
+      "created_at": "2026-09-03T09:52:22.260Z"
+    },
+    {
+      "id": "ALERT_WORKER_015",
+      "worker_id": "WORKER_015",
+      "site_id": "SITE_A",
+      "severity": "critical",
+      "anomaly_score": 0.264,
+      "alert_flag": 0,
+      "message": "On-device TinyML model triggered local alarm and offline distress beacon.",
+      "created_at": "2026-09-02T07:03:53.385Z"
+    },
+    {
+      "id": "ALERT_WORKER_018",
+      "worker_id": "WORKER_018",
+      "site_id": "SITE_A",
+      "severity": "critical",
+      "anomaly_score": 0.415,
+      "alert_flag": 2048,
+      "message": "On-device TinyML model triggered local alarm and offline distress beacon.",
+      "created_at": "2026-09-02T06:50:47.793Z"
+    },
+    {
+      "id": "ALERT_WORKER_001",
+      "worker_id": "WORKER_001",
+      "site_id": "SITE_A",
+      "severity": "critical",
+      "anomaly_score": 0.932,
+      "alert_flag": 7936,
+      "message": "On-device TinyML model triggered local alarm and offline distress beacon.",
+      "created_at": "2026-09-03T09:51:03.942Z"
+    }
+  ],
+  "beacons": [
+    {
+      "id": "BEACON_1788431731362",
+      "worker_id": "WORKER_002",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T10:35:31.362Z"
+    },
+    {
+      "id": "BEACON_1788429142260",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:22.260Z"
+    },
+    {
+      "id": "BEACON_1788429142257",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:22.257Z"
+    },
+    {
+      "id": "BEACON_1788429130978",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:10.978Z"
+    },
+    {
+      "id": "BEACON_1788429130977",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:10.977Z"
+    },
+    {
+      "id": "BEACON_1788429127924",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:07.924Z"
+    },
+    {
+      "id": "BEACON_1788429127921",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -65,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:07.921Z"
+    },
+    {
+      "id": "BEACON_1788429120989",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.989Z"
+    },
+    {
+      "id": "BEACON_1788429120987",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.987Z"
+    },
+    {
+      "id": "BEACON_1788429120985",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.985Z"
+    },
+    {
+      "id": "BEACON_1788429120982",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.982Z"
+    },
+    {
+      "id": "BEACON_1788429120669",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.669Z"
+    },
+    {
+      "id": "BEACON_1788429120666",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.666Z"
+    },
+    {
+      "id": "BEACON_1788429120651",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.651Z"
+    },
+    {
+      "id": "BEACON_1788429120649",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.649Z"
+    },
+    {
+      "id": "BEACON_1788429120634",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.634Z"
+    },
+    {
+      "id": "BEACON_1788429120633",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.633Z"
+    },
+    {
+      "id": "BEACON_1788429120616",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.616Z"
+    },
+    {
+      "id": "BEACON_1788429120615",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.615Z"
+    },
+    {
+      "id": "BEACON_1788429120601",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.601Z"
+    },
+    {
+      "id": "BEACON_1788429120599",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.599Z"
+    },
+    {
+      "id": "BEACON_1788429120587",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.587Z"
+    },
+    {
+      "id": "BEACON_1788429120583",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.583Z"
+    },
+    {
+      "id": "BEACON_1788429120567",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.567Z"
+    },
+    {
+      "id": "BEACON_1788429120565",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.565Z"
+    },
+    {
+      "id": "BEACON_1788429120550",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.550Z"
+    },
+    {
+      "id": "BEACON_1788429120549",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.549Z"
+    },
+    {
+      "id": "BEACON_1788429120534",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.534Z"
+    },
+    {
+      "id": "BEACON_1788429120533",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:52:00.533Z"
+    },
+    {
+      "id": "BEACON_1788429118228",
+      "worker_id": "WORKER_016",
+      "site_id": "SITE_A",
+      "zone": "Control room",
+      "protocol": "LoRa/BLE distress",
+      "local_alarm": true,
+      "rssi_dbm": -70,
+      "gateway": "SITE_A_INTRANET_GATEWAY",
+      "timestamp": "2026-09-03T09:51:58.228Z"
+    }
+  ],
+  "updatedAt": "2026-09-03T10:35:31.362Z"
+}
