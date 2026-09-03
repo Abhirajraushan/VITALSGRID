@@ -9,3 +9,11 @@ __pycache__/
 *.py[cod]
 .vscode/
 .idea/
+
+# Presentation & Submission Files (Keep local only)
+*.pdf
+*.pptx
+*_script.md
+*.bat
+TINKERCAD_WOKWI_HARDWARE_GUIDE.md
+
