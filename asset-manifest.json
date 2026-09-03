@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/VITALSGRID/static/css/main.426690d8.css",
+    "main.js": "/VITALSGRID/static/js/main.9c67adb0.js",
+    "index.html": "/VITALSGRID/index.html",
+    "main.426690d8.css.map": "/VITALSGRID/static/css/main.426690d8.css.map",
+    "main.9c67adb0.js.map": "/VITALSGRID/static/js/main.9c67adb0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.426690d8.css",
+    "static/js/main.9c67adb0.js"
+  ]
+}
