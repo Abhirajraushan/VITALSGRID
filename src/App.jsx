@@ -1041,7 +1041,6 @@ const DEFAULT_TELEMETRY_ROWS = [
       {/* Header Bar */}
       <header className="dashboard-header">
         <div className="brand-block">
-          <span className="eyebrow">🇮🇳 DGMS & FACTORIES ACT 1948 COMPLIANT SCADA OT</span>
           <div className="brand-title-row">
             <div className="brand-mark" aria-hidden="true">V</div>
             <div>
